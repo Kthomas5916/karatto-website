@@ -400,7 +400,9 @@ export default function KarattoWebsite() {
         className="rounded-[2rem] border border-[#C6A05B]/30 shadow-2xl"
       />
     </div>
-  </div><section className="bg-[#F6F2EB] px-6 py-28">
+</div>
+
+<section className="bg-[#F6F2EB] px-6 py-28">
   <div className="mx-auto max-w-7xl">
     <p className="text-sm uppercase tracking-[0.38em] text-[#C6A05B]">
       Visual Brand Boards
