@@ -401,4 +401,3 @@ export default function KarattoWebsite() {
       />
     </div>
   </div>
-</section>
