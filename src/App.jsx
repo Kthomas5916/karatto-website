@@ -342,3 +342,28 @@ export default function KarattoWebsite() {
     </div>
   );
 }
+<section className="grid md:grid-cols-2 gap-8 py-20">
+  <img
+    src="/karatto-resort-board.png"
+    alt="Luxury Resort"
+    className="rounded-3xl shadow-2xl"
+  />
+
+  <img
+    src="/karatto-interior-board.png"
+    alt="Interior Aesthetic"
+    className="rounded-3xl shadow-2xl"
+  />
+
+  <img
+    src="/karatto-dining-board.png"
+    alt="Luxury Dining"
+    className="rounded-3xl shadow-2xl"
+  />
+
+  <img
+    src="/karatto-wellness-board.png"
+    alt="Wellness Lifestyle"
+    className="rounded-3xl shadow-2xl"
+  />
+</section>
