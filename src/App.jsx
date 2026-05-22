@@ -365,5 +365,40 @@ export default function KarattoWebsite() {
     src="/karatto-wellness-board.png"
     alt="Wellness Lifestyle"
     className="rounded-3xl shadow-2xl"
-  />
+  /><section className="bg-[#F6F2EB] px-6 py-28">
+  <div className="mx-auto max-w-7xl">
+    <p className="text-sm uppercase tracking-[0.38em] text-[#C6A05B]">
+      Visual Brand Boards
+    </p>
+
+    <h2 className="mt-5 max-w-4xl font-serif text-5xl leading-tight text-[#12203A] md:text-6xl">
+      A refined visual language for Caribbean luxury hospitality.
+    </h2>
+
+    <div className="mt-16 grid gap-8 md:grid-cols-2">
+      <img
+        src="/karatto-resort-board.png"
+        alt="Caribbean Luxury Resort Atmosphere"
+        className="rounded-[2rem] border border-[#C6A05B]/30 shadow-2xl"
+      />
+
+      <img
+        src="/karatto-interior-board.png"
+        alt="Boutique Interior Aesthetic"
+        className="rounded-[2rem] border border-[#C6A05B]/30 shadow-2xl"
+      />
+
+      <img
+        src="/karatto-dining-board.png"
+        alt="Luxury Dining and Table Styling"
+        className="rounded-[2rem] border border-[#C6A05B]/30 shadow-2xl"
+      />
+
+      <img
+        src="/karatto-wellness-board.png"
+        alt="Wellness and Spa Lifestyle"
+        className="rounded-[2rem] border border-[#C6A05B]/30 shadow-2xl"
+      />
+    </div>
+  </div>
 </section>
