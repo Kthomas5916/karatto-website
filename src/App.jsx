@@ -83,17 +83,20 @@ export default function App() {
       </header>
       <main>
         <section className="relative flex min-h-screen items-center overflow-hidden bg-[#12203A] pt-32">
-          <video
-  autoPlay
-  muted
-  loop
-  playsInline
-  className="absolute inset-0 h-full w-full object-cover opacity-40"
->
-  <source src="/karatto-hero-video.mp4" type="video/mp4" />
-</video>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_20%,rgba(198,160,91,0.35),transparent_28%),linear-gradient(135deg,#12203A_0%,#050505_100%)]" />
-          <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-6 py-24 lg:grid-cols-[1fr_.9fr]">
+
+  <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    className="absolute inset-0 z-0 h-full w-full object-cover opacity-70"
+  >
+    <source src="/karatto-hero-video.mp4" type="video/mp4" />
+  </video>
+
+  <div className="absolute inset-0 z-10 bg-[#12203A]/45" />
+
+  <div className="relative z-20 mx-auto grid max-w-7xl items-center gap-16 px-6 py-24 lg:grid-cols-[1fr_.9fr]">
             <div>
               <p className="mb-6 text-sm uppercase tracking-[0.42em] text-[#C6A05B]">Caribbean Luxury Hospitality Management</p>
               <h1 className="max-w-4xl font-serif text-6xl leading-tight text-white md:text-7xl xl:text-8xl">Curated Hospitality.<br />Timeless Experiences.</h1>
