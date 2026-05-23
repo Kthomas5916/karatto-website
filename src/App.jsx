@@ -84,19 +84,9 @@ export default function App() {
       <main>
         <section className="relative flex min-h-screen items-center overflow-hidden bg-[#12203A] pt-32">
 
-  <video
-    autoPlay
-    muted
-    loop
-    playsInline
-    className="absolute inset-0 z-0 h-full w-full object-cover opacity-70"
-  >
-    <source src="/karatto-hero-video.mp4" type="video/mp4" />
-  </video>
+  
 
-  <div className="absolute inset-0 z-10 bg-[#12203A]/45" />
-
-  <div className="relative z-20 mx-auto grid max-w-7xl items-center gap-16 px-6 py-24 lg:grid-cols-[1fr_.9fr]">
+  <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-6 py-24 lg:grid-cols-[1fr_.9fr]">
             <div>
               <p className="mb-6 text-sm uppercase tracking-[0.42em] text-[#C6A05B]">Caribbean Luxury Hospitality Management</p>
               <h1 className="max-w-4xl font-serif text-6xl leading-tight text-white md:text-7xl xl:text-8xl">Curated Hospitality.<br />Timeless Experiences.</h1>
@@ -166,7 +156,36 @@ export default function App() {
             </div>
           </div>
         </section>
+<section id="cinematic-experience" className="bg-[#12203A] px-6 py-28 text-white">
+  <div className="mx-auto max-w-7xl">
+    <p className="text-sm uppercase tracking-[0.38em] text-[#C6A05B]">
+      Cinematic Brand Experience
+    </p>
 
+    <div className="mt-5 grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
+      <h2 className="font-serif text-5xl leading-tight md:text-6xl">
+        A moving expression of Caribbean luxury.
+      </h2>
+
+      <p className="text-lg leading-8 text-white/70">
+        A curated sequence of coastline, resort atmosphere, interiors, dining, and wellness moments designed to express the visual soul of The Karatto Collection.
+      </p>
+    </div>
+
+    <div className="mt-14 overflow-hidden rounded-[2rem] border border-[#C6A05B]/30 bg-black shadow-2xl">
+      <video
+        controls
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="h-auto w-full"
+      >
+        <source src="/karatto-hero-video.mp4" type="video/mp4" />
+      </video>
+    </div>
+  </div>
+</section>
         <section id="visuals" className="bg-white px-6 py-28">
           <div className="mx-auto max-w-7xl">
             <p className="text-sm uppercase tracking-[0.38em] text-[#C6A05B]">Visual Brand Boards</p>
