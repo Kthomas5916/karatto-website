@@ -83,6 +83,15 @@ export default function App() {
       </header>
       <main>
         <section className="relative flex min-h-screen items-center overflow-hidden bg-[#12203A] pt-32">
+          <video
+  autoPlay
+  muted
+  loop
+  playsInline
+  className="absolute inset-0 h-full w-full object-cover opacity-40"
+>
+  <source src="/karatto-hero-video.mp4" type="video/mp4" />
+</video>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_20%,rgba(198,160,91,0.35),transparent_28%),linear-gradient(135deg,#12203A_0%,#050505_100%)]" />
           <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-6 py-24 lg:grid-cols-[1fr_.9fr]">
             <div>
