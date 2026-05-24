@@ -116,7 +116,49 @@ export default function App() {
         .reveal-visible { opacity: 1; transform: translateY(0); }
         .loader-fade { animation: loaderFade 1.8s ease forwards; }
         @keyframes loaderFade { 0%,70% { opacity: 1; } 100% { opacity: 0; visibility: hidden; } }
-      `}</style>
+      `}</style><style>{`
+  html { 
+    scroll-behavior: smooth; 
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(34px);
+    transition: opacity 900ms ease, transform 900ms ease;
+  }
+
+  .reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .loader-fade {
+    animation: loaderFade 1.8s ease forwards;
+  }
+
+  @keyframes loaderFade {
+    0%,70% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+`}</style>
 
       {loader && (
         <div className="loader-fade fixed inset-0 z-[100] flex items-center justify-center bg-black">
@@ -144,21 +186,53 @@ export default function App() {
       </header>
 
       <main>
-        <section className="relative flex min-h-screen items-center overflow-hidden bg-[#12203A] pt-32">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_20%,rgba(198,160,91,0.35),transparent_28%),linear-gradient(135deg,#12203A_0%,#050505_100%)]" />
-          <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-6 py-24 lg:grid-cols-[1fr_.9fr]">
-            <Reveal>
-              <p className="mb-6 text-sm uppercase tracking-[0.42em] text-[#C6A05B]">Caribbean Luxury Hospitality Management</p>
-              <h1 className="max-w-4xl font-serif text-6xl leading-tight text-white md:text-7xl xl:text-8xl">Curated Hospitality.<br />Timeless Experiences.</h1>
-              <p className="mt-8 max-w-2xl text-lg leading-8 text-white/75 md:text-xl">The Karatto Collection is an Antigua-based luxury hospitality management company specializing in boutique resorts, villas, wellness retreats, and refined independent hotels throughout the Caribbean.</p>
-              <div className="mt-12 flex flex-col gap-4 sm:flex-row">
-                <a href="#contact" className="inline-flex items-center justify-center rounded-full bg-[#C6A05B] px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-[#12203A]">Request Private Consultation →</a>
-                <a href="#showcase" className="inline-flex items-center justify-center rounded-full border border-[#C6A05B] px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-white">Explore Showcase</a>
-              </div>
-            </Reveal>
-            <Reveal><MiniBrandBoard /></Reveal>
-          </div>
-        </section>
+        <section className="relative h-screen overflow-hidden bg-black">
+
+  <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    className="absolute inset-0 h-full w-full object-cover"
+  >
+    <source src="/karatto-hero-video.mp4" type="video/mp4" />
+  </video>
+
+  <div className="absolute inset-0 bg-black/45" />
+
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(198,160,91,0.18),transparent_40%)]" />
+
+  <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center text-white">
+
+    <img
+      src="/karatto-logo.jpg"
+      alt="Karatto Logo"
+      className="mb-10 h-28 w-auto object-contain opacity-95 animate-[fadeIn_2s_ease]"
+    />
+
+    <p className="text-sm uppercase tracking-[0.55em] text-[#C6A05B]">
+      The Karatto Collection
+    </p>
+
+    <h1 className="mt-8 max-w-5xl font-serif text-6xl leading-tight md:text-8xl">
+      Curated Hospitality.<br />
+      Timeless Experiences.
+    </h1>
+
+    <p className="mt-10 max-w-3xl text-lg leading-8 text-white/75 md:text-xl">
+      Caribbean luxury hospitality management for boutique resorts,
+      private villas, wellness retreats, and refined independent hotels.
+    </p>
+
+    <a
+      href="#about"
+      className="mt-14 inline-flex items-center justify-center rounded-full border border-[#C6A05B] px-8 py-4 text-sm font-semibold uppercase tracking-[0.22em] text-white transition hover:bg-[#C6A05B] hover:text-[#12203A]"
+    >
+      Enter Experience
+    </a>
+
+  </div>
+</section>
 
         <section className="relative overflow-hidden bg-[#12203A] px-6 py-32 text-white">
           <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "url('/karatto-resort-board.png')", backgroundSize: "cover", backgroundPosition: "center", backgroundAttachment: "fixed" }} />
@@ -438,7 +512,126 @@ export default function App() {
               </Reveal>
             </div>
           </div>
-        </section>
+        </section><footer className="relative overflow-hidden bg-[#050505] px-6 py-24 text-white">
+
+  <div className="absolute inset-0 opacity-20">
+    <img
+      src="/karatto-resort-board.png"
+      alt="Karatto cinematic background"
+      className="h-full w-full object-cover"
+    />
+  </div>
+
+  <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/80 via-[#050505]/95 to-black" />
+
+  <div className="relative mx-auto max-w-7xl">
+
+    <div className="grid gap-14 lg:grid-cols-[1.1fr_0.9fr_0.9fr]">
+
+      <div>
+
+        <div className="inline-flex rounded-full border border-[#C6A05B]/40 bg-white/5 p-4 shadow-[0_0_40px_rgba(198,160,91,0.18)]">
+          <Logo />
+        </div>
+
+        <h2 className="mt-10 max-w-2xl font-serif text-5xl leading-tight md:text-6xl">
+          Curated hospitality for the next era of Caribbean luxury.
+        </h2>
+
+        <p className="mt-8 max-w-xl text-lg leading-8 text-white/65">
+          The Karatto Collection partners with owners, developers, and investors to shape boutique resorts, private villas, wellness retreats, and refined independent hotels.
+        </p>
+
+      </div>
+
+      <div>
+
+        <p className="text-sm uppercase tracking-[0.35em] text-[#C6A05B]">
+          Destinations
+        </p>
+
+        <div className="mt-8 space-y-4 text-white/70">
+          <p>Antigua & Barbuda</p>
+          <p>Barbados</p>
+          <p>Saint Lucia</p>
+          <p>Grenada</p>
+          <p>Turks & Caicos</p>
+          <p>Future Caribbean Retreats</p>
+        </div>
+
+      </div>
+
+      <div>
+
+        <p className="text-sm uppercase tracking-[0.35em] text-[#C6A05B]">
+          Connect
+        </p>
+
+        <div className="mt-8 space-y-4 text-white/70">
+
+          <a
+            href="mailto:info@karattocollection.com"
+            className="block hover:text-[#C6A05B]"
+          >
+            info@karattocollection.com
+          </a>
+
+          <a
+            href="#contact"
+            className="block hover:text-[#C6A05B]"
+          >
+            Private Consultation
+          </a>
+
+          <a
+            href="#showcase"
+            className="block hover:text-[#C6A05B]"
+          >
+            Property Showcase
+          </a>
+
+          <a
+            href="#karatto-experience"
+            className="block hover:text-[#C6A05B]"
+          >
+            The Karatto Experience
+          </a>
+
+        </div>
+
+        <div className="mt-10 flex gap-4">
+
+          <a className="flex h-11 w-11 items-center justify-center rounded-full border border-[#C6A05B]/50 text-sm text-[#C6A05B] transition hover:bg-[#C6A05B] hover:text-black">
+            IG
+          </a>
+
+          <a className="flex h-11 w-11 items-center justify-center rounded-full border border-[#C6A05B]/50 text-sm text-[#C6A05B] transition hover:bg-[#C6A05B] hover:text-black">
+            IN
+          </a>
+
+          <a className="flex h-11 w-11 items-center justify-center rounded-full border border-[#C6A05B]/50 text-sm text-[#C6A05B] transition hover:bg-[#C6A05B] hover:text-black">
+            FB
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div className="mt-20 flex flex-col gap-4 border-t border-white/10 pt-8 text-sm uppercase tracking-[0.22em] text-white/40 md:flex-row md:items-center md:justify-between">
+
+      <p>© 2026 The Karatto Collection</p>
+
+      <p>
+        Antigua & Barbuda | Caribbean Luxury Hospitality
+      </p>
+
+    </div>
+
+  </div>
+
+</footer>
       </main>
     </div>
   );
