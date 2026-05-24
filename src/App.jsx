@@ -52,7 +52,7 @@ function IconMark({ children }) {
 }
 
 function MiniBrandBoard() {
-  const cards = ["Brand Philosophy", "Visual Identity", "Logo Usage", "Color Palette", "Interior Aesthetic", "Scent Branding", "Uniform Standards", "Lighting Standards", "Table Setting", "Floral Styling", "Social Identity", "Our Promise"];
+  const cards = ["Brand Philosophy", "Visual Identity", "Logo Usage", "Scent Branding", "Uniform Standards", "Table Setting", "Social Identity", "Our Promise"];
   return (
     <div className="grid grid-cols-2 gap-3 rounded-[2rem] border border-[#C6A05B]/30 bg-[#F6F2EB] p-4 shadow-2xl sm:grid-cols-3">
       {cards.map((card, index) => (
