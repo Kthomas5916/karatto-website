@@ -275,29 +275,126 @@ export default function App() {
           </div>
         </section>
 
-        <section id="map" className="bg-[#F6F2EB] px-6 py-28">
-          <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
-            <Reveal>
-              <p className="text-sm uppercase tracking-[0.38em] text-[#C6A05B]">Destination Map</p>
-              <h2 className="mt-5 font-serif text-5xl leading-tight text-[#12203A] md:text-6xl">A Caribbean footprint designed for thoughtful luxury growth.</h2>
-              <p className="mt-7 text-lg leading-8 text-black/65">Rooted in Antigua & Barbuda with a future vision across select Caribbean destinations where boutique luxury, wellness, privacy, and cultural storytelling can thrive.</p>
-            </Reveal>
-            <Reveal>
-              <div className="relative h-[520px] overflow-hidden rounded-[2rem] border border-[#C6A05B]/30 bg-[#12203A] shadow-2xl">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(198,160,91,0.24),transparent_35%),linear-gradient(135deg,#12203A,#050505)]" />
-                <div className="absolute inset-x-12 top-1/2 h-px bg-[#C6A05B]/30" />
-                <div className="absolute inset-y-12 left-1/2 w-px bg-[#C6A05B]/30" />
-                {mapDestinations.map(([name, top, left]) => (
-                  <div key={name} className="absolute" style={{ top, left }}>
-                    <span className="absolute -inset-3 rounded-full bg-[#C6A05B]/25 animate-ping" />
-                    <span className="relative block h-4 w-4 rounded-full bg-[#C6A05B]" />
-                    <span className="absolute left-6 top-[-6px] whitespace-nowrap text-xs uppercase tracking-[0.18em] text-white/80">{name}</span>
-                  </div>
-                ))}
-              </div>
-            </Reveal>
-          </div>
-        </section>
+        <section id="karatto-experience" className="bg-[#F6F2EB] px-6 py-32">
+  <div className="mx-auto max-w-7xl">
+    <p className="text-sm uppercase tracking-[0.38em] text-[#C6A05B]">
+      The Karatto Experience
+    </p>
+
+    <h2 className="mt-5 max-w-5xl font-serif text-5xl leading-tight text-[#12203A] md:text-7xl">
+      Hospitality designed around feeling, memory, and place.
+    </h2>
+
+    <div className="mt-20 grid gap-24">
+      <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+        <div className="overflow-hidden rounded-[2rem] shadow-2xl">
+          <img
+            src="/karatto-resort-board.png"
+            alt="Arrival Experience"
+            className="h-full w-full object-cover transition duration-700 hover:scale-105"
+          />
+        </div>
+
+        <div>
+          <p className="text-sm uppercase tracking-[0.32em] text-[#C6A05B]">
+            Arrival Experience
+          </p>
+          <h3 className="mt-5 font-serif text-4xl leading-tight text-[#12203A] md:text-5xl">
+            Every arrival should feel cinematic, personal, and emotionally unforgettable.
+          </h3>
+          <p className="mt-7 text-lg leading-8 text-black/65">
+            From the first impression to the final detail, Karatto-managed destinations are designed to create a sense of anticipation, elegance, and emotional connection.
+          </p>
+        </div>
+      </div>
+
+      <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+        <div className="order-2 lg:order-1">
+          <p className="text-sm uppercase tracking-[0.32em] text-[#C6A05B]">
+            Wellness & Restoration
+          </p>
+          <h3 className="mt-5 font-serif text-4xl leading-tight text-[#12203A] md:text-5xl">
+            Privacy, calm, and restoration woven into the rhythm of the stay.
+          </h3>
+          <p className="mt-7 text-lg leading-8 text-black/65">
+            Spa rituals, candlelit spaces, tropical serenity, and wellness programming create a deeper sense of renewal for guests seeking quiet luxury.
+          </p>
+        </div>
+
+        <div className="order-1 overflow-hidden rounded-[2rem] shadow-2xl lg:order-2">
+          <img
+            src="/karatto-wellness-board.png"
+            alt="Wellness and Restoration"
+            className="h-full w-full object-cover transition duration-700 hover:scale-105"
+          />
+        </div>
+      </div>
+
+      <div className="overflow-hidden rounded-[2rem] bg-[#12203A] shadow-2xl">
+        <img
+          src="/karatto-dining-board.png"
+          alt="Culinary Rituals"
+          className="h-[520px] w-full object-cover opacity-85"
+        />
+        <div className="p-8 text-white md:p-12">
+          <p className="text-sm uppercase tracking-[0.32em] text-[#C6A05B]">
+            Culinary Rituals
+          </p>
+          <h3 className="mt-5 max-w-4xl font-serif text-4xl leading-tight md:text-5xl">
+            Dining becomes a ritual of atmosphere, storytelling, and Caribbean refinement.
+          </h3>
+          <p className="mt-7 max-w-3xl text-lg leading-8 text-white/70">
+            Candlelit tables, local ingredients, oceanfront moments, and refined service transform dining into one of the most memorable parts of the guest journey.
+          </p>
+        </div>
+      </div>
+
+      <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+        <div className="overflow-hidden rounded-[2rem] shadow-2xl">
+          <img
+            src="/karatto-interior-board.png"
+            alt="Private Villa Living"
+            className="h-full w-full object-cover transition duration-700 hover:scale-105"
+          />
+        </div>
+
+        <div>
+          <p className="text-sm uppercase tracking-[0.32em] text-[#C6A05B]">
+            Private Villa Living
+          </p>
+          <h3 className="mt-5 font-serif text-4xl leading-tight text-[#12203A] md:text-5xl">
+            Quiet mornings, private terraces, and discreet concierge-style care.
+          </h3>
+          <p className="mt-7 text-lg leading-8 text-black/65">
+            The Karatto Collection brings villa living into a hospitality framework defined by privacy, elegance, service consistency, and owner confidence.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section className="relative overflow-hidden bg-[#12203A] px-6 py-44 text-white">
+  <div className="absolute inset-0 opacity-25">
+    <img
+      src="/karatto-resort-board.png"
+      alt="Ocean Luxury Atmosphere"
+      className="h-full w-full object-cover"
+    />
+  </div>
+
+  <div className="absolute inset-0 bg-[#12203A]/80" />
+
+  <div className="relative mx-auto max-w-5xl text-center">
+    <p className="text-sm uppercase tracking-[0.42em] text-[#C6A05B]">
+      The Karatto Philosophy
+    </p>
+
+    <h2 className="mt-10 font-serif text-5xl leading-tight md:text-7xl">
+      “Luxury should feel personal, timeless, and deeply connected to place.”
+    </h2>
+  </div>
+</section>
 
         <section className="bg-white px-6 py-24">
           <div className="mx-auto max-w-7xl">
