@@ -557,13 +557,54 @@ export default function App() {
             <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
               <Reveal>
                 <p className="text-sm uppercase tracking-[0.38em] text-[#C6A05B]">Private Consultation</p>
-                <h2 className="mt-5 font-serif text-5xl leading-tight text-[#12203A] md:text-6xl">A confidential conversation for owners, developers, and investors.</h2>
-                <p className="mt-7 max-w-2xl text-lg leading-8 text-black/65">Share your property vision with our hospitality team. We respond with discretion, clarity, and a refined owner-first perspective.</p>
+                <h2 className="mt-5 font-serif text-5xl leading-tight text-[#12203A] md:text-6xl">Private Concierge</h2>
+                <p className="mt-7 max-w-2xl text-lg leading-8 text-black/65"><p className="mt-7 max-w-2xl text-lg leading-8 text-black/65">
+  Connect privately with The Karatto Collection regarding hospitality management, luxury villa operations, owner representation, wellness retreat concepts, or boutique resort development opportunities throughout the Caribbean.
+</p></p>
                 <div className="mt-10"><Logo dark /></div>
                 <p className="mt-8 text-black/60">Antigua & Barbuda | Caribbean Luxury Hospitality Management</p>
                 <a href="mailto:info@karattocollection.com" className="mt-8 inline-flex rounded-full bg-[#12203A] px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#C6A05B] hover:text-[#12203A]">info@karattocollection.com</a>
               </Reveal>
               <Reveal>
+                <div className="mb-10 grid gap-4 sm:grid-cols-2">
+
+  <div className="rounded-2xl border border-[#C6A05B]/30 bg-[#F6F2EB] p-5">
+    <p className="text-xs uppercase tracking-[0.25em] text-[#C6A05B]">
+      Inquiry Assistance
+    </p>
+    <p className="mt-3 text-sm leading-7 text-black/65">
+      Personalized guidance regarding hospitality partnerships and luxury operational support.
+    </p>
+  </div>
+
+  <div className="rounded-2xl border border-[#C6A05B]/30 bg-[#F6F2EB] p-5">
+    <p className="text-xs uppercase tracking-[0.25em] text-[#C6A05B]">
+      Consultation Requests
+    </p>
+    <p className="mt-3 text-sm leading-7 text-black/65">
+      Private discussions for resort ownership groups, villa operators, and boutique hotel investors.
+    </p>
+  </div>
+
+  <div className="rounded-2xl border border-[#C6A05B]/30 bg-[#F6F2EB] p-5">
+    <p className="text-xs uppercase tracking-[0.25em] text-[#C6A05B]">
+      Owner Onboarding
+    </p>
+    <p className="mt-3 text-sm leading-7 text-black/65">
+      Luxury operational onboarding for new hospitality assets entering the Karatto Collection.
+    </p>
+  </div>
+
+  <div className="rounded-2xl border border-[#C6A05B]/30 bg-[#F6F2EB] p-5">
+    <p className="text-xs uppercase tracking-[0.25em] text-[#C6A05B]">
+      Property Discussions
+    </p>
+    <p className="mt-3 text-sm leading-7 text-black/65">
+      Conversations regarding luxury repositioning, wellness hospitality, and Caribbean expansion opportunities.
+    </p>
+  </div>
+
+</div>
                 <form action="mailto:info@karattocollection.com" method="post" encType="text/plain" className="rounded-[2rem] border border-[#C6A05B]/50 bg-white p-8 shadow-2xl">
                   <div className="grid gap-5">
                     <input className="rounded-xl border border-[#E7DED0] p-4 outline-none transition focus:border-[#C6A05B] focus:shadow-lg" name="Name" placeholder="Name" />
@@ -572,7 +613,7 @@ export default function App() {
                     <input className="rounded-xl border border-[#E7DED0] p-4 outline-none transition focus:border-[#C6A05B] focus:shadow-lg" name="Property Type" placeholder="Property Type / Number of Rooms" />
                     <input className="rounded-xl border border-[#E7DED0] p-4 outline-none transition focus:border-[#C6A05B] focus:shadow-lg" name="Preferred Consultation Date" type="date" />
                     <textarea className="min-h-[150px] rounded-xl border border-[#E7DED0] p-4 outline-none transition focus:border-[#C6A05B] focus:shadow-lg" name="Message" placeholder="Tell us about your property or opportunity" />
-                    <button type="submit" className="rounded-full bg-[#12203A] px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#C6A05B] hover:text-[#12203A]">Request Private Consultation</button>
+                    <button type="submit" className="rounded-full bg-[#12203A] px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#C6A05B] hover:text-[#12203A]">Connect With Concierge</button>
                   </div>
                 </form>
               </Reveal>
