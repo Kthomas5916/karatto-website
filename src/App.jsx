@@ -74,6 +74,7 @@ function MiniBrandBoard() {
 export default function App() {
   const [loader, setLoader] = useState(true);
   const [audioOn, setAudioOn] = useState(false);
+  const [cursor, setCursor] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const timer = setTimeout(() => setLoader(false), 1800);
@@ -101,6 +102,20 @@ export default function App() {
       osc.connect(gain);
       gain.connect(ctx.destination);
       osc.start();
+      useEffect(() => {
+  const moveCursor = (event) => {
+    setCursor({
+      x: event.clientX,
+      y: event.clientY,
+    });
+  };
+
+  window.addEventListener("mousemove", moveCursor);
+
+  return () => {
+    window.removeEventListener("mousemove", moveCursor);
+  };
+}, []);
     }
     return () => {
       if (osc) osc.stop();
@@ -110,12 +125,63 @@ export default function App() {
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#F6F2EB] text-[#121212]">
+      <div
+  className="gold-cursor hidden lg:block"
+  style={{
+    left: `${cursor.x}px`,
+    top: `${cursor.y}px`,
+  }}
+/>
       <style>{`
         html { scroll-behavior: smooth; }
         .reveal { opacity: 0; transform: translateY(34px); transition: opacity 900ms ease, transform 900ms ease; }
         .reveal-visible { opacity: 1; transform: translateY(0); }
         .loader-fade { animation: loaderFade 1.8s ease forwards; }
         @keyframes loaderFade { 0%,70% { opacity: 1; } 100% { opacity: 0; visibility: hidden; } }
+        .gold-cursor {
+  pointer-events: none;
+  position: fixed;
+  z-index: 9999;
+  height: 22px;
+  width: 22px;
+  border-radius: 9999px;
+  background: rgba(198, 160, 91, 0.35);
+  box-shadow: 0 0 35px rgba(198, 160, 91, 0.75);
+  transform: translate(-50%, -50%);
+  transition: transform 120ms ease;
+}
+
+.luxury-tilt {
+  transition:
+    transform 500ms ease,
+    box-shadow 500ms ease;
+}
+
+.luxury-tilt:hover {
+  transform:
+    perspective(900px)
+    rotateX(2deg)
+    rotateY(-3deg)
+    scale(1.015);
+
+  box-shadow:
+    0 30px 80px rgba(18, 32, 58, 0.22);
+}
+
+.magnetic-button {
+  transition:
+    transform 300ms ease,
+    box-shadow 300ms ease;
+}
+
+.magnetic-button:hover {
+  transform:
+    translateY(-3px)
+    scale(1.03);
+
+  box-shadow:
+    0 18px 45px rgba(198, 160, 91, 0.25);
+}
       `}</style><style>{`
   html { 
     scroll-behavior: smooth; 
@@ -258,7 +324,7 @@ export default function App() {
             <div className="mt-16 grid gap-8 lg:grid-cols-3">
               {showcase.map(([src, label, title, place, text]) => (
                 <Reveal key={title}>
-                  <div className="group overflow-hidden rounded-[2rem] bg-[#12203A] text-white shadow-2xl">
+                  <div className="luxury-tilt overflow-hidden rounded-[2rem] shadow-2xl">
                     <div className="relative h-[430px] overflow-hidden">
                       <img src={src} alt={title} className="h-full w-full object-cover transition duration-700 group-hover:scale-110" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent" />
@@ -361,7 +427,7 @@ export default function App() {
 
     <div className="mt-20 grid gap-24">
       <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-        <div className="overflow-hidden rounded-[2rem] shadow-2xl">
+        <div className="luxury-tilt overflow-hidden rounded-[2rem] shadow-2xl">
           <img
             src="/karatto-resort-board.png"
             alt="Arrival Experience"
@@ -395,7 +461,7 @@ export default function App() {
           </p>
         </div>
 
-        <div className="order-1 overflow-hidden rounded-[2rem] shadow-2xl lg:order-2">
+        <div className="luxury-tilt overflow-hidden rounded-[2rem] shadow-2xl">
           <img
             src="/karatto-wellness-board.png"
             alt="Wellness and Restoration"
@@ -404,7 +470,7 @@ export default function App() {
         </div>
       </div>
 
-      <div className="overflow-hidden rounded-[2rem] bg-[#12203A] shadow-2xl">
+    <div className="luxury-tilt overflow-hidden rounded-[2rem] shadow-2xl">
         <img
           src="/karatto-dining-board.png"
           alt="Culinary Rituals"
@@ -424,7 +490,7 @@ export default function App() {
       </div>
 
       <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-        <div className="overflow-hidden rounded-[2rem] shadow-2xl">
+        <div className="luxury-tilt overflow-hidden rounded-[2rem] shadow-2xl">
           <img
             src="/karatto-interior-board.png"
             alt="Private Villa Living"
