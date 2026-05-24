@@ -137,7 +137,7 @@ export default function App() {
           <nav className="hidden items-center gap-8 text-sm uppercase tracking-[0.18em] text-white/80 lg:flex">
             <a href="#showcase" className="hover:text-[#C6A05B]">Showcase</a>
             <a href="#standards" className="hover:text-[#C6A05B]">Standards</a>
-            <a href="#map" className="hover:text-[#C6A05B]">Map</a>
+            <a href="#karatto-experience" className="hover:text-[#C6A05B]">Experience</a>
             <a href="#contact" className="hover:text-[#C6A05B]">Contact</a>
           </nav>
         </div>
