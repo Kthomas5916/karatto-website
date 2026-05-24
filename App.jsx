@@ -1,0 +1,348 @@
+
+import { useEffect, useState } from "react";
+
+const moodBoards = [
+  ["/karatto-resort-board.png", "Caribbean Luxury Resort Atmosphere"],
+  ["/karatto-interior-board.png", "Boutique Interior Aesthetic"],
+  ["/karatto-dining-board.png", "Luxury Dining & Table Styling"],
+  ["/karatto-wellness-board.png", "Wellness & Spa Lifestyle"],
+];
+
+const services = [
+  ["🏨", "Hotel & Resort Management", "Complete operational leadership for boutique luxury resorts, villas, wellness retreats, and independent hotels under 200 rooms."],
+  ["✦", "Luxury Guest Experience", "Personalized guest journeys, VIP handling, service rituals, and curated hospitality standards from pre-arrival to departure."],
+  ["☷", "Training & Culture", "Service culture programs, SOP implementation, leadership coaching, and luxury team development."],
+  ["◒", "Luxury Repositioning", "Transforming Caribbean hospitality assets into refined boutique luxury destinations."],
+  ["≈", "Wellness & Lifestyle", "Wellness concepts, spa positioning, lifestyle programming, and Caribbean-inspired rituals."],
+  ["◈", "Pre-Opening Services", "Opening support, staffing, operational setup, brand standards, training, and soft-opening preparation."],
+];
+
+const standards = [
+  ["Guest Experience", "Personalized arrival, emotional service, recognition moments, and elegant departure rituals."],
+  ["Culinary Direction", "Local sourcing, dining storytelling, private table rituals, and elevated restaurant presentation."],
+  ["Wellness Programming", "Spa positioning, restorative rituals, retreats, mindfulness, and nature-led guest experiences."],
+  ["Revenue Strategy", "ADR positioning, seasonal pricing, luxury distribution, and owner-focused performance discipline."],
+  ["Boutique Operations", "Lean systems, SOPs, leadership cadence, audits, and refined daily execution."],
+  ["Luxury Branding", "Editorial visual language, sensory details, storytelling, and consistent high-end touchpoints."],
+];
+
+const showcase = [
+  ["/karatto-resort-board.png", "Coming Soon", "Antigua Coastal Reserve", "Antigua & Barbuda", "A future boutique beach resort concept shaped around private coves, ocean rituals, barefoot elegance, and emotionally intelligent service."],
+  ["/karatto-interior-board.png", "Villa Collection", "The Karatto Villas", "Caribbean Region", "A refined collection of private villas and residences managed with discreet concierge service, owner care, and timeless island sophistication."],
+  ["/karatto-wellness-board.png", "Wellness Retreat", "Serenity Island Retreat", "Eastern Caribbean", "A restorative wellness concept built around spa rituals, quiet luxury, nutrition, nature, and deeply personal guest journeys."],
+];
+
+const mapDestinations = [
+  ["Antigua & Barbuda", "39%", "63%"],
+  ["Saint Lucia", "61%", "54%"],
+  ["Grenada", "78%", "50%"],
+  ["Barbados", "69%", "68%"],
+  ["Saint Vincent", "71%", "56%"],
+];
+
+function Reveal({ children, className = "" }) {
+  return <div className={`reveal ${className}`}>{children}</div>;
+}
+
+function Logo({ dark = false }) {
+  return (
+    <div className="flex items-center gap-4">
+      <img src="/karatto-logo.jpg" alt="The Karatto Collection Logo" className="h-16 w-auto object-contain" />
+      <div className="leading-tight">
+        <p className={`font-serif text-2xl tracking-[0.25em] ${dark ? "text-[#12203A]" : "text-white"}`}>KARATTO</p>
+        <p className="text-[10px] uppercase tracking-[0.35em] text-[#C6A05B]">The Collection</p>
+      </div>
+    </div>
+  );
+}
+
+function MiniBrandBoard() {
+  const cards = ["Brand Philosophy", "Visual Identity", "Logo Usage", "Scent Branding", "Uniform Standards", "Table Setting", "Social Identity", "Our Promise"];
+  return (
+    <div className="grid grid-cols-2 gap-3 rounded-[2rem] border border-[#C6A05B]/30 bg-[#F6F2EB] p-4 shadow-2xl sm:grid-cols-4">
+      {cards.map((card, i) => (
+        <div key={card} className={`min-h-[105px] rounded-2xl border border-[#E5D9C6] p-4 ${i % 4 === 0 ? "bg-[#12203A] text-white" : "bg-white text-[#12203A]"}`}>
+          <p className="font-serif text-2xl text-[#C6A05B]">{String(i + 1).padStart(2, "0")}</p>
+          <p className="mt-2 text-xs uppercase tracking-[0.18em]">{card}</p>
+          <div className="mt-4 h-1 w-10 bg-[#C6A05B]" />
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default function App() {
+  const [loader, setLoader] = useState(true);
+  const [audioOn, setAudioOn] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoader(false), 1800);
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    const els = Array.from(document.querySelectorAll(".reveal"));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((e) => e.isIntersecting && e.target.classList.add("reveal-visible"));
+    }, { threshold: 0.15 });
+    els.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    let ctx, osc, gain;
+    if (audioOn) {
+      ctx = new (window.AudioContext || window.webkitAudioContext)();
+      osc = ctx.createOscillator();
+      gain = ctx.createGain();
+      osc.type = "sine";
+      osc.frequency.value = 84;
+      gain.gain.value = 0.035;
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start();
+    }
+    return () => {
+      if (osc) osc.stop();
+      if (ctx) ctx.close();
+    };
+  }, [audioOn]);
+
+  return (
+    <div className="min-h-screen overflow-x-hidden bg-[#F6F2EB] text-[#121212]">
+      <style>{`
+        html { scroll-behavior: smooth; }
+        .reveal { opacity: 0; transform: translateY(34px); transition: opacity 900ms ease, transform 900ms ease; }
+        .reveal-visible { opacity: 1; transform: translateY(0); }
+        .loader-fade { animation: loaderFade 1.8s ease forwards; }
+        @keyframes loaderFade { 0%,70% { opacity: 1; } 100% { opacity: 0; visibility: hidden; } }
+      `}</style>
+
+      {loader && (
+        <div className="loader-fade fixed inset-0 z-[100] flex items-center justify-center bg-black">
+          <div className="text-center">
+            <img src="/karatto-logo.jpg" alt="Karatto Logo" className="mx-auto h-28 w-auto object-contain opacity-90" />
+            <p className="mt-8 text-xs uppercase tracking-[0.5em] text-[#C6A05B]">The Karatto Collection</p>
+          </div>
+        </div>
+      )}
+
+      <button onClick={() => setAudioOn(!audioOn)} className="fixed bottom-6 right-6 z-50 rounded-full border border-[#C6A05B]/60 bg-[#12203A]/90 px-5 py-3 text-xs uppercase tracking-[0.22em] text-white shadow-2xl backdrop-blur-md transition hover:bg-[#C6A05B] hover:text-[#12203A]">
+        {audioOn ? "Ambient On" : "Ambient"}
+      </button>
+
+      <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-[#12203A]/90 backdrop-blur-md">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+          <Logo />
+          <nav className="hidden items-center gap-8 text-sm uppercase tracking-[0.18em] text-white/80 lg:flex">
+            <a href="#showcase" className="hover:text-[#C6A05B]">Showcase</a>
+            <a href="#standards" className="hover:text-[#C6A05B]">Standards</a>
+            <a href="#map" className="hover:text-[#C6A05B]">Map</a>
+            <a href="#contact" className="hover:text-[#C6A05B]">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section className="relative flex min-h-screen items-center overflow-hidden bg-[#12203A] pt-32">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_20%,rgba(198,160,91,0.35),transparent_28%),linear-gradient(135deg,#12203A_0%,#050505_100%)]" />
+          <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-6 py-24 lg:grid-cols-[1fr_.9fr]">
+            <Reveal>
+              <p className="mb-6 text-sm uppercase tracking-[0.42em] text-[#C6A05B]">Caribbean Luxury Hospitality Management</p>
+              <h1 className="max-w-4xl font-serif text-6xl leading-tight text-white md:text-7xl xl:text-8xl">Curated Hospitality.<br />Timeless Experiences.</h1>
+              <p className="mt-8 max-w-2xl text-lg leading-8 text-white/75 md:text-xl">The Karatto Collection is an Antigua-based luxury hospitality management company specializing in boutique resorts, villas, wellness retreats, and refined independent hotels throughout the Caribbean.</p>
+              <div className="mt-12 flex flex-col gap-4 sm:flex-row">
+                <a href="#contact" className="inline-flex items-center justify-center rounded-full bg-[#C6A05B] px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-[#12203A]">Request Private Consultation →</a>
+                <a href="#showcase" className="inline-flex items-center justify-center rounded-full border border-[#C6A05B] px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-white">Explore Showcase</a>
+              </div>
+            </Reveal>
+            <Reveal><MiniBrandBoard /></Reveal>
+          </div>
+        </section>
+
+        <section className="relative overflow-hidden bg-[#12203A] px-6 py-32 text-white">
+          <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "url('/karatto-resort-board.png')", backgroundSize: "cover", backgroundPosition: "center", backgroundAttachment: "fixed" }} />
+          <div className="absolute inset-0 bg-[#12203A]/85" />
+          <div className="relative mx-auto grid max-w-7xl gap-16 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+            <Reveal>
+              <p className="text-sm uppercase tracking-[0.38em] text-[#C6A05B]">Founder Story</p>
+              <h2 className="mt-5 font-serif text-5xl leading-tight md:text-7xl">Born in Antigua & Barbuda, The Karatto Collection was created to redefine Caribbean luxury hospitality.</h2>
+            </Reveal>
+            <Reveal className="rounded-[2rem] border border-[#C6A05B]/30 bg-white/10 p-8 backdrop-blur-sm">
+              <p className="text-lg leading-8 text-white/75">Our philosophy is grounded in intimate scale, emotional service, refined operational discipline, and a deep respect for place. We believe Caribbean luxury should feel personal, intentional, and beautifully connected to the destination.</p>
+              <p className="mt-6 text-lg leading-8 text-white/75">From boutique resorts and private villas to wellness retreats and lifestyle hotels, Karatto exists to help owners build hospitality assets that are memorable, profitable, and culturally resonant.</p>
+            </Reveal>
+          </div>
+        </section>
+
+        <section id="showcase" className="bg-[#F6F2EB] px-6 py-28">
+          <div className="mx-auto max-w-7xl">
+            <Reveal>
+              <p className="text-sm uppercase tracking-[0.38em] text-[#C6A05B]">Signature Property Showcase</p>
+              <h2 className="mt-5 max-w-4xl font-serif text-5xl leading-tight text-[#12203A] md:text-6xl">Featured resort and villa concepts shaped for the next era of Caribbean luxury.</h2>
+            </Reveal>
+            <div className="mt-16 grid gap-8 lg:grid-cols-3">
+              {showcase.map(([src, label, title, place, text]) => (
+                <Reveal key={title}>
+                  <div className="group overflow-hidden rounded-[2rem] bg-[#12203A] text-white shadow-2xl">
+                    <div className="relative h-[430px] overflow-hidden">
+                      <img src={src} alt={title} className="h-full w-full object-cover transition duration-700 group-hover:scale-110" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent" />
+                      <div className="absolute bottom-0 p-7">
+                        <p className="text-xs uppercase tracking-[0.3em] text-[#C6A05B]">{label}</p>
+                        <h3 className="mt-3 font-serif text-3xl">{title}</h3>
+                        <p className="mt-1 text-sm uppercase tracking-[0.2em] text-white/60">{place}</p>
+                      </div>
+                    </div>
+                    <p className="p-7 leading-7 text-white/72">{text}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="services" className="bg-white px-6 py-28">
+          <div className="mx-auto max-w-7xl">
+            <Reveal>
+              <p className="text-sm uppercase tracking-[0.38em] text-[#C6A05B]">Services</p>
+              <h2 className="mt-5 max-w-4xl font-serif text-5xl leading-tight text-[#12203A] md:text-6xl">Luxury hospitality management designed around elevated experiences.</h2>
+            </Reveal>
+            <div className="mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+              {services.map(([icon, title, text]) => (
+                <Reveal key={title}>
+                  <div className="rounded-[1.8rem] border border-[#E7DED0] bg-[#F6F2EB] p-8 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-2xl">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#C6A05B]/50 bg-white text-2xl">{icon}</div>
+                    <h3 className="mt-6 font-serif text-3xl text-[#12203A]">{title}</h3>
+                    <p className="mt-5 leading-8 text-black/68">{text}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="standards" className="relative overflow-hidden bg-[#111] px-6 py-28 text-white">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(198,160,91,0.22),transparent_35%)]" />
+          <div className="relative mx-auto max-w-7xl">
+            <Reveal>
+              <p className="text-sm uppercase tracking-[0.38em] text-[#C6A05B]">Our Standards</p>
+              <h2 className="mt-5 max-w-4xl font-serif text-5xl leading-tight md:text-6xl">A luxury-standard system for boutique properties.</h2>
+            </Reveal>
+            <div className="mt-16 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+              {standards.map(([title, text]) => (
+                <Reveal key={title}>
+                  <div className="min-h-[260px] rounded-[1.8rem] border border-[#C6A05B]/30 bg-white/10 p-7 backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-[#C6A05B]/70">
+                    <p className="font-serif text-3xl text-[#C6A05B]">{title}</p>
+                    <p className="mt-5 leading-8 text-white/72">{text}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="cinematic-experience" className="bg-[#12203A] px-6 py-28 text-white">
+          <div className="mx-auto max-w-7xl">
+            <Reveal>
+              <p className="text-sm uppercase tracking-[0.38em] text-[#C6A05B]">Cinematic Brand Experience</p>
+              <h2 className="mt-5 font-serif text-5xl leading-tight md:text-6xl">A moving expression of Caribbean luxury.</h2>
+            </Reveal>
+            <Reveal className="mt-14 overflow-hidden rounded-[2rem] border border-[#C6A05B]/30 bg-black shadow-2xl">
+              <video controls autoPlay muted loop playsInline className="h-auto w-full">
+                <source src="/karatto-hero-video.mp4" type="video/mp4" />
+              </video>
+            </Reveal>
+          </div>
+        </section>
+
+        <section id="visuals" className="bg-white px-6 py-28">
+          <div className="mx-auto max-w-7xl">
+            <Reveal>
+              <p className="text-sm uppercase tracking-[0.38em] text-[#C6A05B]">Visual Brand Boards</p>
+              <h2 className="mt-5 max-w-4xl font-serif text-5xl leading-tight text-[#12203A] md:text-6xl">A refined visual language for Caribbean luxury hospitality.</h2>
+            </Reveal>
+            <div className="mt-16 grid gap-8 md:grid-cols-2">
+              {moodBoards.map(([src, title]) => (
+                <Reveal key={src}>
+                  <div className="overflow-hidden rounded-[2rem] border border-[#C6A05B]/30 bg-white shadow-2xl">
+                    <img src={src} alt={title} className="h-full w-full object-cover transition duration-700 hover:scale-105" />
+                    <div className="p-6"><p className="font-serif text-2xl text-[#12203A]">{title}</p></div>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="map" className="bg-[#F6F2EB] px-6 py-28">
+          <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+            <Reveal>
+              <p className="text-sm uppercase tracking-[0.38em] text-[#C6A05B]">Destination Map</p>
+              <h2 className="mt-5 font-serif text-5xl leading-tight text-[#12203A] md:text-6xl">A Caribbean footprint designed for thoughtful luxury growth.</h2>
+              <p className="mt-7 text-lg leading-8 text-black/65">Rooted in Antigua & Barbuda with a future vision across select Caribbean destinations where boutique luxury, wellness, privacy, and cultural storytelling can thrive.</p>
+            </Reveal>
+            <Reveal>
+              <div className="relative h-[520px] overflow-hidden rounded-[2rem] border border-[#C6A05B]/30 bg-[#12203A] shadow-2xl">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(198,160,91,0.24),transparent_35%),linear-gradient(135deg,#12203A,#050505)]" />
+                <div className="absolute inset-x-12 top-1/2 h-px bg-[#C6A05B]/30" />
+                <div className="absolute inset-y-12 left-1/2 w-px bg-[#C6A05B]/30" />
+                {mapDestinations.map(([name, top, left]) => (
+                  <div key={name} className="absolute" style={{ top, left }}>
+                    <span className="absolute -inset-3 rounded-full bg-[#C6A05B]/25 animate-ping" />
+                    <span className="relative block h-4 w-4 rounded-full bg-[#C6A05B]" />
+                    <span className="absolute left-6 top-[-6px] whitespace-nowrap text-xs uppercase tracking-[0.18em] text-white/80">{name}</span>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          </div>
+        </section>
+
+        <section className="bg-white px-6 py-24">
+          <div className="mx-auto max-w-7xl">
+            <Reveal>
+              <p className="text-center text-sm uppercase tracking-[0.38em] text-[#C6A05B]">Press & Recognition</p>
+              <div className="mt-10 grid gap-5 md:grid-cols-3">
+                {["Featured Destinations", "Luxury Hospitality Vision", "Caribbean Excellence"].map((item) => (
+                  <div key={item} className="rounded-[1.5rem] border border-[#E7DED0] bg-[#F6F2EB] p-8 text-center shadow-sm">
+                    <p className="font-serif text-3xl text-[#12203A]">{item}</p>
+                    <p className="mt-4 text-sm uppercase tracking-[0.2em] text-black/45">Karatto Editorial</p>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          </div>
+        </section>
+
+        <section id="contact" className="px-6 py-28">
+          <div className="mx-auto max-w-6xl">
+            <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+              <Reveal>
+                <p className="text-sm uppercase tracking-[0.38em] text-[#C6A05B]">Private Consultation</p>
+                <h2 className="mt-5 font-serif text-5xl leading-tight text-[#12203A] md:text-6xl">A confidential conversation for owners, developers, and investors.</h2>
+                <p className="mt-7 max-w-2xl text-lg leading-8 text-black/65">Share your property vision with our hospitality team. We respond with discretion, clarity, and a refined owner-first perspective.</p>
+                <div className="mt-10"><Logo dark /></div>
+                <p className="mt-8 text-black/60">Antigua & Barbuda | Caribbean Luxury Hospitality Management</p>
+                <a href="mailto:info@karattocollection.com" className="mt-8 inline-flex rounded-full bg-[#12203A] px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#C6A05B] hover:text-[#12203A]">info@karattocollection.com</a>
+              </Reveal>
+              <Reveal>
+                <form action="mailto:info@karattocollection.com" method="post" encType="text/plain" className="rounded-[2rem] border border-[#C6A05B]/50 bg-white p-8 shadow-2xl">
+                  <div className="grid gap-5">
+                    <input className="rounded-xl border border-[#E7DED0] p-4 outline-none transition focus:border-[#C6A05B] focus:shadow-lg" name="Name" placeholder="Name" />
+                    <input className="rounded-xl border border-[#E7DED0] p-4 outline-none transition focus:border-[#C6A05B] focus:shadow-lg" name="Company" placeholder="Company / Property Name" />
+                    <input className="rounded-xl border border-[#E7DED0] p-4 outline-none transition focus:border-[#C6A05B] focus:shadow-lg" name="Email" placeholder="Email Address" />
+                    <input className="rounded-xl border border-[#E7DED0] p-4 outline-none transition focus:border-[#C6A05B] focus:shadow-lg" name="Property Type" placeholder="Property Type / Number of Rooms" />
+                    <input className="rounded-xl border border-[#E7DED0] p-4 outline-none transition focus:border-[#C6A05B] focus:shadow-lg" name="Preferred Consultation Date" type="date" />
+                    <textarea className="min-h-[150px] rounded-xl border border-[#E7DED0] p-4 outline-none transition focus:border-[#C6A05B] focus:shadow-lg" name="Message" placeholder="Tell us about your property or opportunity" />
+                    <button type="submit" className="rounded-full bg-[#12203A] px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#C6A05B] hover:text-[#12203A]">Request Private Consultation</button>
+                  </div>
+                </form>
+              </Reveal>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  );
+}
