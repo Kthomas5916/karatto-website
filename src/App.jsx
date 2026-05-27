@@ -554,9 +554,14 @@ export default function App() {
           <p className="text-sm uppercase tracking-[0.32em] text-[#C6A05B]">
             Culinary Rituals
           </p>
-          <h3 className="mt-5 max-w-4xl font-serif text-4xl leading-tight md:text-5xl">
-            Dining becomes a ritual of atmosphere, storytelling, and Caribbean refinement.
-          </h3>
+          <h3 className="mt-6 max-w-4xl rounded-2xl bg-black/45 p-6 font-serif text-4xl leading-tight text-white shadow-2xl backdrop-blur-sm md:text-5xl">
+  Dining becomes a ritual of atmosphere, storytelling, and Caribbean refinement.
+</h3>
+
+<p className="mt-6 max-w-3xl rounded-2xl bg-black/45 p-6 text-lg leading-8 text-white shadow-2xl backdrop-blur-sm">
+  Candlelit tables, local ingredients, oceanfront moments, and refined service transform dining into one of the most memorable parts of the guest journey.
+
+          </p>
           <p className="mt-7 max-w-3xl text-lg leading-8 text-white/70">
             Candlelit tables, local ingredients, oceanfront moments, and refined service transform dining into one of the most memorable parts of the guest journey.
           </p>
