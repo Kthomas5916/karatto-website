@@ -562,9 +562,6 @@ export default function App() {
   Candlelit tables, local ingredients, oceanfront moments, and refined service transform dining into one of the most memorable parts of the guest journey.
 
           </p>
-          <p className="mt-7 max-w-3xl text-lg leading-8 text-white/70">
-            Candlelit tables, local ingredients, oceanfront moments, and refined service transform dining into one of the most memorable parts of the guest journey.
-          </p>
         </div>
       </div>
 
