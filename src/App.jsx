@@ -329,7 +329,7 @@ export default function App() {
 
       <div className="p-8">
         <p className="text-xs uppercase tracking-[0.3em] text-[#C6A05B]">
-          Founder & Managing Director
+          Managing Director & Operations
         </p>
 
         <h4 className="mt-4 font-serif text-3xl text-white">
@@ -348,7 +348,7 @@ export default function App() {
 
       <div className="p-8">
         <p className="text-xs uppercase tracking-[0.3em] text-[#C6A05B]">
-          Operations & Guest Experience
+          Director of Sales & Guest Experiences
         </p>
 
         <h4 className="mt-4 font-serif text-3xl text-white">
@@ -367,7 +367,7 @@ export default function App() {
 
       <div className="p-8">
         <p className="text-xs uppercase tracking-[0.3em] text-[#C6A05B]">
-          Brand & Development Strategy
+          Director of Marketing Development Strategy & Public Relations
         </p>
 
         <h4 className="mt-4 font-serif text-3xl text-white">
