@@ -308,7 +308,80 @@ export default function App() {
             <Reveal>
               <p className="text-sm uppercase tracking-[0.38em] text-[#C6A05B]">Founder Story</p>
               <h2 className="mt-5 font-serif text-5xl leading-tight md:text-7xl">Born in Antigua & Barbuda, The Karatto Collection was created to redefine Caribbean luxury hospitality.</h2>
-            </Reveal>
+            </Reveal><div className="mt-24">
+  <div className="flex items-end justify-between">
+    <div>
+      <p className="text-sm uppercase tracking-[0.35em] text-[#C6A05B]">
+        Leadership
+      </p>
+
+      <h3 className="mt-4 font-serif text-4xl text-white md:text-5xl">
+        Management Team
+      </h3>
+    </div>
+  </div>
+
+  <div className="mt-14 grid gap-10 md:grid-cols-3">
+
+    {/* Executive Profile 1 */}
+    <div className="luxury-tilt overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 backdrop-blur-sm">
+      <div className="aspect-[4/5] bg-[#1A1A1A]" />
+
+      <div className="p-8">
+        <p className="text-xs uppercase tracking-[0.3em] text-[#C6A05B]">
+          Founder & Managing Director
+        </p>
+
+        <h4 className="mt-4 font-serif text-3xl text-white">
+          Name Coming Soon
+        </h4>
+
+        <p className="mt-5 leading-8 text-white/65">
+          Executive biography and hospitality leadership profile coming soon.
+        </p>
+      </div>
+    </div>
+
+    {/* Executive Profile 2 */}
+    <div className="luxury-tilt overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 backdrop-blur-sm">
+      <div className="aspect-[4/5] bg-[#1A1A1A]" />
+
+      <div className="p-8">
+        <p className="text-xs uppercase tracking-[0.3em] text-[#C6A05B]">
+          Operations & Guest Experience
+        </p>
+
+        <h4 className="mt-4 font-serif text-3xl text-white">
+          Name Coming Soon
+        </h4>
+
+        <p className="mt-5 leading-8 text-white/65">
+          Executive biography and operational leadership profile coming soon.
+        </p>
+      </div>
+    </div>
+
+    {/* Executive Profile 3 */}
+    <div className="luxury-tilt overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 backdrop-blur-sm">
+      <div className="aspect-[4/5] bg-[#1A1A1A]" />
+
+      <div className="p-8">
+        <p className="text-xs uppercase tracking-[0.3em] text-[#C6A05B]">
+          Brand & Development Strategy
+        </p>
+
+        <h4 className="mt-4 font-serif text-3xl text-white">
+          Name Coming Soon
+        </h4>
+
+        <p className="mt-5 leading-8 text-white/65">
+          Executive biography and development profile coming soon.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
             <Reveal className="rounded-[2rem] border border-[#C6A05B]/30 bg-white/10 p-8 backdrop-blur-sm">
               <p className="text-lg leading-8 text-white/75">Our philosophy is grounded in intimate scale, emotional service, refined operational discipline, and a deep respect for place. We believe Caribbean luxury should feel personal, intentional, and beautifully connected to the destination.</p>
               <p className="mt-6 text-lg leading-8 text-white/75">From boutique resorts and private villas to wellness retreats and lifestyle hotels, Karatto exists to help owners build hospitality assets that are memorable, profitable, and culturally resonant.</p>
