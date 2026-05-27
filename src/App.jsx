@@ -16,7 +16,7 @@ const services = [
   ["≈", "Wellness & Lifestyle", "Wellness concepts, spa positioning, lifestyle programming, and Caribbean-inspired rituals."],
   ["◈", "Pre-Opening Services", "Opening support, staffing, operational setup, brand standards, training, and soft-opening preparation."],
   {
-  title: "Sales, Marketing & Public Relations Representation",
+  const services = [["◆", "Sales, Marketing & Public Relations Representation", "Strategic luxury brand positioning, hospitality sales representation, destination marketing, editorial partnerships, and public relations support designed to elevate visibility, reputation, and commercial performance throughout the Caribbean luxury travel market."],]
   description:
     "Strategic luxury brand positioning, hospitality sales representation, destination marketing, editorial partnerships, and public relations support designed to elevate visibility, reputation, and commercial performance throughout the Caribbean luxury travel market.",
 },
