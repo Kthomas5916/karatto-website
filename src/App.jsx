@@ -1,4 +1,4 @@
-
+import kenyattaThomas from "./assets/kenyatta-thomas.jpg";
 import { useEffect, useState } from "react";
 
 const moodBoards = [
@@ -325,7 +325,15 @@ export default function App() {
 
     {/* Executive Profile 1 */}
     <div className="luxury-tilt overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 backdrop-blur-sm">
-      <div className="aspect-[4/5] bg-[#1A1A1A]" />
+      <div className="relative aspect-[4/5] overflow-hidden">
+  <img
+    src={kenyattaThomas}
+    alt="Kenyatta Thomas"
+    className="h-full w-full object-cover transition duration-700 hover:scale-105"
+  />
+
+  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+</div>
 
       <div className="p-8">
         <p className="text-xs uppercase tracking-[0.3em] text-[#C6A05B]">
@@ -333,17 +341,17 @@ export default function App() {
         </p>
 
         <h4 className="mt-4 font-serif text-3xl text-white">
-          Name Coming Soon
+          Kenyatta Thomas
         </h4>
 
         <p className="mt-5 leading-8 text-white/65">
-          Executive biography and hospitality leadership profile coming soon.
+         Kenyatta Thomas is a passionate Caribbean hospitality leader recognized for transforming luxury hospitality environments into emotionally memorable guest experiences rooted in refinement, personalization, and genuine human connection. With extensive executive leadership experience across luxury resorts, boutique hospitality, and premium guest operations throughout the Caribbean, he is known for combining operational excellence with a visionary approach to elevated service culture and luxury brand development.
         </p>
       </div>
     </div>
 
     {/* Executive Profile 2 */}
-    <div className="luxury-tilt overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 backdrop-blur-sm">
+    <div className="luxury-tilt overflow-hidden rounded-[2rem] border border-[#C6A05B]/20 bg-black/40 shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-md transition duration-700 hover:-translate-y-2">
       <div className="aspect-[4/5] bg-[#1A1A1A]" />
 
       <div className="p-8">
