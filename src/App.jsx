@@ -76,6 +76,7 @@ export default function App() {
   const [loader, setLoader] = useState(true);
   const [audioOn, setAudioOn] = useState(false);
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
+  const [showKenyattaBio, setShowKenyattaBio] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => setLoader(false), 1800);
@@ -346,6 +347,12 @@ export default function App() {
 
         <p className="mt-5 leading-8 text-white/65">
          Kenyatta Thomas is a passionate Caribbean hospitality leader recognized for transforming luxury hospitality environments into emotionally memorable guest experiences rooted in refinement, personalization, and genuine human connection. With extensive executive leadership experience across luxury resorts, boutique hospitality, and premium guest operations throughout the Caribbean, he is known for combining operational excellence with a visionary approach to elevated service culture and luxury brand development.
+         <button
+  onClick={() => setShowKenyattaBio(true)}
+  className="magnetic-button mt-6 rounded-full border border-[#C6A05B]/60 px-6 py-3 text-xs uppercase tracking-[0.22em] text-[#C6A05B] transition hover:bg-[#C6A05B] hover:text-black"
+>
+  View Biography
+</button>
         </p>
       </div>
     </div>
@@ -824,6 +831,44 @@ export default function App() {
 
 </footer>
       </main>
+      {showKenyattaBio && (
+  <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 px-6 backdrop-blur-md">
+    <div className="relative max-h-[90vh] max-w-4xl overflow-y-auto rounded-[2rem] border border-[#C6A05B]/30 bg-[#F6F2EB] p-8 shadow-2xl md:p-12">
+      <button
+        onClick={() => setShowKenyattaBio(false)}
+        className="absolute right-6 top-6 rounded-full border border-[#C6A05B]/50 px-4 py-2 text-sm text-[#12203A] hover:bg-[#C6A05B]"
+      >
+        Close
+      </button>
+
+      <div className="grid gap-10 md:grid-cols-[0.8fr_1.2fr]">
+        <img
+          src={kenyattaThomas}
+          alt="Kenyatta Thomas"
+          className="rounded-[1.5rem] object-cover shadow-2xl"
+        />
+
+        <div>
+          <p className="text-sm uppercase tracking-[0.35em] text-[#C6A05B]">
+            Managing Director & Operations
+          </p>
+
+          <h2 className="mt-4 font-serif text-5xl text-[#12203A]">
+            Kenyatta Thomas
+          </h2>
+
+          <p className="mt-8 text-lg leading-8 text-black/70">
+            Kenyatta Thomas is a passionate Caribbean hospitality leader whose career has been defined by a deep commitment to creating exceptional guest experiences rooted in warmth, refinement, and genuine human connection.
+          </p>
+
+          <p className="mt-6 text-lg leading-8 text-black/70">
+            His leadership philosophy is grounded in the belief that true luxury is not simply delivered through service, but through atmosphere, anticipation, personalization, and heartfelt attention to detail. With more than a decade of experience across luxury resorts, boutique hospitality, food and beverage operations, and executive leadership throughout the Caribbean, he has built a reputation for transforming hospitality environments into emotionally memorable experiences that leave a lasting impression on every guest.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
     </div>
   );
 }
