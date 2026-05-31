@@ -36,10 +36,6 @@ const showcase = [
 
 const mapDestinations = [
   ["Antigua & Barbuda", "39%", "63%"],
-  ["Saint Lucia", "61%", "54%"],
-  ["Grenada", "78%", "50%"],
-  ["Barbados", "69%", "68%"],
-  ["Saint Vincent", "71%", "56%"],
 ];
 
 function Reveal({ children, className = "" }) {
