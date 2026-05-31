@@ -1,4 +1,4 @@
-import kenyattaThomas from "./assets/kenyatta-thomas.jpg";
+import kenyattaThomas from "./assets/kenyatta-thomas.png";
 import leonNorville from "./assets/leon-norville.png";
 import { useEffect, useState } from "react";
 
