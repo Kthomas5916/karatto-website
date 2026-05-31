@@ -747,10 +747,6 @@ export default function App() {
 
         <div className="mt-8 space-y-4 text-white/70">
           <p>Antigua & Barbuda</p>
-          <p>Barbados</p>
-          <p>Saint Lucia</p>
-          <p>Grenada</p>
-          <p>Turks & Caicos</p>
           <p>Future Caribbean Retreats</p>
         </div>
 
