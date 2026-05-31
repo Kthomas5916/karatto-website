@@ -742,13 +742,16 @@ export default function App() {
       <div>
 
         <p className="text-sm uppercase tracking-[0.35em] text-[#C6A05B]">
-          Destinations
+          Our Home
         </p>
 
-        <div className="mt-8 space-y-4 text-white/70">
-          <p>Antigua & Barbuda</p>
-          <p>Future Caribbean Retreats</p>
-        </div>
+        <div className="mt-8 text-white/70">
+  <p>Antigua & Barbuda</p>
+
+  <p className="mt-4 max-w-xs text-sm leading-7 text-white/50">
+    Proudly headquartered in Antigua & Barbuda, serving luxury hospitality owners, developers, resorts, villas, and tourism brands throughout the Caribbean.
+  </p>
+</div>
 
       </div>
 
