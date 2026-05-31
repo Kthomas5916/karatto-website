@@ -318,7 +318,7 @@ export default function App() {
       </p>
 
       <h3 className="mt-4 font-serif text-4xl text-white md:text-5xl">
-        Management Team
+        Executive Leadership
       </h3>
     </div>
   </div>
