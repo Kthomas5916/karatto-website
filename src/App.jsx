@@ -447,7 +447,69 @@ export default function App() {
             </div>
           </div>
         </section>
+<section id="capabilities" className="bg-[#F6F2EB] px-6 py-28">
+  <div className="mx-auto max-w-7xl">
+    <Reveal>
+      <p className="text-sm uppercase tracking-[0.38em] text-[#C6A05B]">
+        Luxury Hospitality Capabilities
+      </p>
 
+      <h2 className="mt-5 max-w-4xl font-serif text-5xl leading-tight text-[#12203A] md:text-6xl">
+        Strategic expertise designed to elevate hospitality assets and guest experiences.
+      </h2>
+    </Reveal>
+
+    <div className="mt-16 grid gap-8 md:grid-cols-2">
+      <Reveal>
+        <div className="rounded-[2rem] border border-[#E7DED0] bg-white p-10 shadow-sm">
+          <h3 className="font-serif text-3xl text-[#12203A]">
+            Operational Transformation
+          </h3>
+
+          <p className="mt-5 leading-8 text-black/70">
+            Assessment and optimization of hospitality operations, service delivery, staffing structures, SOPs, guest journey design, financial controls, and performance standards to improve profitability and guest satisfaction.
+          </p>
+        </div>
+      </Reveal>
+
+      <Reveal>
+        <div className="rounded-[2rem] border border-[#E7DED0] bg-white p-10 shadow-sm">
+          <h3 className="font-serif text-3xl text-[#12203A]">
+            Luxury Brand Repositioning
+          </h3>
+
+          <p className="mt-5 leading-8 text-black/70">
+            Strategic repositioning of hotels, villas, resorts, and tourism assets through refined branding, market alignment, guest experience enhancements, and elevated luxury service standards.
+          </p>
+        </div>
+      </Reveal>
+
+      <Reveal>
+        <div className="rounded-[2rem] border border-[#E7DED0] bg-white p-10 shadow-sm">
+          <h3 className="font-serif text-3xl text-[#12203A]">
+            Pre-Opening Support
+          </h3>
+
+          <p className="mt-5 leading-8 text-black/70">
+            Full pre-opening planning including recruitment, training, operational setup, guest experience design, policy development, quality assurance systems, and launch readiness.
+          </p>
+        </div>
+      </Reveal>
+
+      <Reveal>
+        <div className="rounded-[2rem] border border-[#E7DED0] bg-white p-10 shadow-sm">
+          <h3 className="font-serif text-3xl text-[#12203A]">
+            Revenue & Commercial Strategy
+          </h3>
+
+          <p className="mt-5 leading-8 text-black/70">
+            Revenue optimization, sales strategy, marketing development, public relations planning, partnership growth, and guest acquisition initiatives designed to maximize long-term asset value.
+          </p>
+        </div>
+      </Reveal>
+    </div>
+  </div>
+</section>
         <section id="standards" className="relative overflow-hidden bg-[#111] px-6 py-28 text-white">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(198,160,91,0.22),transparent_35%)]" />
           <div className="relative mx-auto max-w-7xl">
