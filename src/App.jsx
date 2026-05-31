@@ -820,15 +820,27 @@ export default function App() {
 
     <div className="mt-20 flex flex-col gap-4 border-t border-white/10 pt-8 text-sm uppercase tracking-[0.22em] text-white/40 md:flex-row md:items-center md:justify-between">
 
-      <p>© 2026 The Karatto Collection</p>
+  <div className="flex flex-col gap-2 md:flex-row md:items-center md:gap-6">
+    <span>Antigua & Barbuda | Caribbean Luxury Hospitality</span>
 
-      <p>
-        Antigua & Barbuda | Caribbean Luxury Hospitality
-      </p>
+    <a
+      href="/privacy"
+      className="transition hover:text-[#C6A05B]"
+    >
+      Privacy Policy
+    </a>
 
-    </div>
-
+    <a
+      href="/terms"
+      className="transition hover:text-[#C6A05B]"
+    >
+      Terms & Conditions
+    </a>
   </div>
+
+</div>   {/* closes mt-20 footer row */}
+
+</div>   {/* closes max-w-7xl footer container */}
 
 </footer>
       </main>
