@@ -325,77 +325,77 @@ export default function App() {
   <div className="mt-14 grid gap-10 md:grid-cols-3">
 
     {/* Executive Profile 1 */}
-    <div className="luxury-tilt overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 backdrop-blur-sm">
-      <div className="relative aspect-[4/5] overflow-hidden">
-  <img
-    src={kenyattaThomas}
-    alt="Kenyatta Thomas"
-    className="h-full w-full object-cover transition duration-700 hover:scale-105"
-  />
+<div className="luxury-tilt overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 backdrop-blur-sm">
+  <div className="relative aspect-[4/5] overflow-hidden bg-[#EAE2CC]">
+    <img
+      src={kenyattaThomas}
+      alt="Kenyatta Thomas"
+      className="h-full w-full object-cover object-[65%_top] transition duration-700 hover:scale-105"
+    />
 
-  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+  </div>
+
+  <div className="p-8">
+    <p className="text-xs uppercase tracking-[0.3em] text-[#C6A05B]">
+      Managing Director & Operations
+    </p>
+
+    <h4 className="mt-4 font-serif text-3xl text-white">
+      Kenyatta Thomas
+    </h4>
+
+    <button
+      onClick={() => setShowKenyattaBio(true)}
+      className="magnetic-button mt-6 rounded-full border border-[#C6A05B]/60 px-6 py-3 text-xs uppercase tracking-[0.22em] text-[#C6A05B] transition hover:bg-[#C6A05B] hover:text-black"
+    >
+      View Biography
+    </button>
+  </div>
 </div>
 
-      <div className="p-8">
-        <p className="text-xs uppercase tracking-[0.3em] text-[#C6A05B]">
-          Managing Director & Operations
-        </p>
+{/* Executive Profile 2 */}
+<div className="luxury-tilt overflow-hidden rounded-[2rem] border border-[#C6A05B]/20 bg-black/40 shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-md transition duration-700 hover:-translate-y-2">
+  <div className="aspect-[4/5] bg-[#1A1A1A]" />
 
-        <h4 className="mt-4 font-serif text-3xl text-white">
-          Kenyatta Thomas
-        </h4>
+  <div className="p-8">
+    <p className="text-xs uppercase tracking-[0.3em] text-[#C6A05B]">
+      Director of Sales & Guest Experiences
+    </p>
 
-        <p className="mt-5 leading-8 text-white/65">
-         Kenyatta Thomas is a passionate Caribbean hospitality leader recognized for transforming luxury hospitality environments into emotionally memorable guest experiences rooted in refinement, personalization, and genuine human connection. With extensive executive leadership experience across luxury resorts, boutique hospitality, and premium guest operations throughout the Caribbean, he is known for combining operational excellence with a visionary approach to elevated service culture and luxury brand development.
-         <button
-  onClick={() => setShowKenyattaBio(true)}
-  className="magnetic-button mt-6 rounded-full border border-[#C6A05B]/60 px-6 py-3 text-xs uppercase tracking-[0.22em] text-[#C6A05B] transition hover:bg-[#C6A05B] hover:text-black"
->
-  View Biography
-</button>
-        </p>
-      </div>
-    </div>
-
-    {/* Executive Profile 2 */}
-    <div className="luxury-tilt overflow-hidden rounded-[2rem] border border-[#C6A05B]/20 bg-black/40 shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-md transition duration-700 hover:-translate-y-2">
-      <div className="aspect-[4/5] bg-[#1A1A1A]" />
-
-      <div className="p-8">
-        <p className="text-xs uppercase tracking-[0.3em] text-[#C6A05B]">
-          Director of Sales & Guest Experiences
-        </p>
-
-        <h4 className="mt-4 font-serif text-3xl text-white">
-          Name Coming Soon
-        </h4>
-
-        <p className="mt-5 leading-8 text-white/65">
-          Executive biography and operational leadership profile coming soon.
-        </p>
-      </div>
-    </div>
-
-    {/* Executive Profile 3 */}
-    <div className="luxury-tilt overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 backdrop-blur-sm">
-      <div className="aspect-[4/5] bg-[#1A1A1A]" />
-
-      <div className="p-8">
-        <p className="text-xs uppercase tracking-[0.3em] text-[#C6A05B]">
-          Director of Marketing Development Strategy & Public Relations
-        </p>
-
-        <h4 className="mt-4 font-serif text-3xl text-white">
-          Name Coming Soon
-        </h4>
-
-        <p className="mt-5 leading-8 text-white/65">
-          Executive biography and development profile coming soon.
-        </p>
-      </div>
-    </div>
-
+    <h4 className="mt-4 font-serif text-3xl text-white">
+      Name Coming Soon
+    </h4>
   </div>
+</div>
+
+{/* Executive Profile 3 */}
+<div className="luxury-tilt overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 backdrop-blur-sm">
+  <div className="relative aspect-[4/5] overflow-hidden bg-[#EAE2CC]">
+    <img
+      src={leonNorville}
+      alt="Leon Norville"
+      className="h-full w-full object-cover object-top transition duration-700 hover:scale-105"
+    />
+
+    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+  </div>
+
+  <div className="p-8">
+    <p className="text-xs uppercase tracking-[0.3em] text-[#C6A05B]">
+      Director of Marketing Development Strategy & Public Relations
+    </p>
+
+    <h4 className="mt-4 font-serif text-3xl text-white">
+      Leon Norville
+    </h4>
+
+    <button className="magnetic-button mt-6 rounded-full border border-[#C6A05B]/60 px-6 py-3 text-xs uppercase tracking-[0.22em] text-[#C6A05B] transition hover:bg-[#C6A05B] hover:text-black">
+      View Biography
+    </button>
+  </div>
+</div>
+</div>
 </div>
             <Reveal className="rounded-[2rem] border border-[#C6A05B]/30 bg-white/10 p-8 backdrop-blur-sm">
               <p className="text-lg leading-8 text-white/75">Our philosophy is grounded in intimate scale, emotional service, refined operational discipline, and a deep respect for place. We believe Caribbean luxury should feel personal, intentional, and beautifully connected to the destination.</p>
