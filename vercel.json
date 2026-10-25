@@ -1,0 +1,13 @@
+
+{
+  "rewrites": [
+    {
+      "source": "/property-management",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/property-management/",
+      "destination": "/index.html"
+    }
+  ]
+}
