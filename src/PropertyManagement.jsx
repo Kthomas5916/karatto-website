@@ -9,7 +9,39 @@ export default function PropertyManagement(){
   const [sent, setSent] = useState(false);
   const [form, setForm] = useState({name:'', email:'', property:'Luxury villa', location:'', message:''});
   const update = (key,value) => setForm(old=>({...old,[key]:value}));
-  const submit = (e)=>{e.preventDefault(); const body = `Name: ${form.name}\nEmail: ${form.email}\nProperty type: ${form.property}\nLocation: ${form.location}\n\n${form.message}`; window.location.href=`mailto:info@karattocollection.com?subject=${encodeURIComponent('Property Management Enquiry')}&body=${encodeURIComponent(body)}`; setSent(true);};
+  
+const submit = async (e) => {
+  e.preventDefault();
+  setSent(false);
+
+  try {
+    const response = await fetch("https://formspree.io/f/mdeeeooe", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        name: form.name,
+        email: form.email,
+        property_type: form.property,
+        property_location: form.location,
+        message: form.message,
+        _subject: "New Karatto Villa Management Enquiry",
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Form submission failed");
+    }
+
+    setSent(true);
+  } catch (error) {
+    console.error("Enquiry submission error:", error);
+    alert("Your enquiry could not be sent. Please try again.");
+  }
+};
+
   return <div className="min-h-screen bg-[#F6F2EB] text-[#12203A]">
     <header className="sticky top-0 z-50 bg-[#12203A] text-white shadow-lg"><div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-6 py-4"><a href="/" className="flex items-center gap-3"><img src="/karatto-logo.jpg" alt="The Karatto Collection logo" className="h-14 w-auto"/><span className="font-serif text-lg tracking-[.15em]">KARATTO <span className="block text-[10px] uppercase tracking-[.3em] text-[#C6A05B]">Villa & Residence Management</span></span></a><nav className="flex flex-wrap gap-5 text-xs uppercase tracking-widest"><a href="/">The Collection</a><a href="#divisions">Services</a><a href="#owners">For Owners</a><a href="#enquire">Enquire</a></nav></div></header>
     <main>
